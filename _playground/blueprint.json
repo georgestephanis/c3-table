@@ -1,6 +1,6 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
-	"landingPage": "/c3-table/",
+	"landingPage": "/acf-block-trail/",
 	"preferredVersions": {
 		"php": "latest",
 		"wp": "latest"
