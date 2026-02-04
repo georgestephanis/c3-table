@@ -1,0 +1,58 @@
+{
+    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
+    "api_version": 3,
+    "name": "c3-table",
+    "title": "Company Comparison Table",
+    "category": "widgets",
+    "icon": "table-col-after",
+    "description": "A table to compare assorted companies.",
+    "keywords": [
+        "clever",
+        "c3",
+        "c3-table",
+        "companies",
+        "comparison",
+        "table"
+    ],
+    "textdomain": "c3-table",
+    "supports": {
+        "anchor": true,
+        "ariaLabel": true,
+        "dimensions": {
+            "width": true
+        },
+        "html": false,
+        "reusable": false,
+        "spacing": {
+            "margin": true
+        },
+        "shadow": true
+    },
+    "selectors": {
+        "dimensions": ".c3-table",
+        "spacing": ".c3-table"
+    },
+    "styles": [
+        {
+            "name": "clean",
+            "label": "Clean",
+            "isDefault": true
+        },
+        {
+            "name": "blue",
+            "label": "Blue"
+        }
+    ],
+    "style": [
+        "file:./c3-table.css"
+    ],
+    "viewScript": [
+        "file:./c3-table.js"
+    ],
+    "acf": {
+        "blockVersion": 3,
+        "renderCallback": "Clever\\C3Tables\\render_c3_table_block",
+        "hideFieldsInSidebar": false,
+        "autoInlineEditing": false
+    }
+}

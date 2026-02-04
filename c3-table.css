@@ -1,0 +1,379 @@
+/* Reset base styles: */
+.c3-table,
+.c3-table thead,
+.c3-table tbody,
+.c3-table tfoot,
+.c3-table tr,
+.c3-table th,
+.c3-table td {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border-color: inherit;
+    text-align: left;
+    font-weight: inherit;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+}
+
+.c3-table {
+    --clever-blue: rgb( 34, 159, 230 );
+
+    --background: transparent;
+    --text-color: #131a22;
+    --border-color: #dddedf;
+    --border-radius: 8px;
+    --border-widths: 1px;
+    --base-size: 1.5em;
+
+    width: 100%;
+    border-radius: var(--border-radius);
+    border: var(--border-widths) solid var(--border-color);
+    font-family: "Montserrat", sans-serif,helvetica;
+    box-shadow: 2px 3px 4px #0001;
+}
+
+/* Make sure we don't allow pointer events in the editor -- this can cause issues. */
+.acf-block-preview .c3-table a {
+    pointer-events: none;
+}
+
+.c3-table th,
+.c3-table td {
+    color: var(--text-color);
+    padding: 1em 2em;
+}
+
+.c3-table thead {
+    --text-color: #fff;
+    --background: var(--clever-blue);
+    --border-color: rgb(199, 213, 229);
+
+    background: var(--background);
+}
+
+.c3-table thead tr {
+
+}
+
+.c3-table thead tr th {
+    font-weight: 900;
+    border-right: var(--border-widths) solid var(--border-color);
+}
+
+.c3-table thead tr th:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+
+.c3-table thead tr th:last-child {
+    border-top-right-radius: var(--border-radius);
+    border-right: none;
+}
+
+.c3-table tfoot {
+
+}
+
+.c3-table tbody {
+    --border-color: rgb( 199, 213, 229 );
+    --background: #f5f8fc;
+}
+
+.c3-table tbody tr:hover {
+    --background: #fff;
+
+}
+
+.c3-table tbody tr th,
+.c3-table tbody tr td {
+    border: var(--border-widths) solid var(--border-color);
+    background: var(--background);
+
+    transition: background 0.3s ease-in-out;
+}
+
+.c3-table tbody tr:first-child th,
+.c3-table tbody tr:first-child td {
+    border-top: none;
+}
+
+.c3-table tbody tr th:last-child,
+.c3-table tbody tr td:last-child {
+    border-right: none;
+}
+
+.c3-table tbody tr:last-child th,
+.c3-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.c3-table tbody tr th:first-child,
+.c3-table tbody tr td:first-child {
+    border-left: none;
+}
+
+.c3-table tbody tr th {
+    text-align: center;
+}
+
+.c3-table tbody tr th img {
+    max-width: 10em;
+    max-height: 7em;
+}
+
+.c3-table .company a.company-link {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    transition-delay: 0.15s;
+}
+
+.c3-table tr:hover .company a.company-link {
+    transition: transform 0.1s ease-in-out;
+    transition-delay: 0s;
+    transform: scale(1.04);
+}
+
+.c3-table .company-rating {
+    --size: var(--base-size);
+}
+
+/* Star Ratings */
+.c3-table .company-rating .star-rating {
+    display: inline-block;
+    height: var(--size);
+    aspect-ratio: 5;
+    box-sizing: border-box;
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 5 L79 95 L2 40 L98 40 L21 95 Z'/></svg>");
+    mask-size: var(--size);
+    background: black;
+    margin-inline-end: calc( var(--size) / 4 );
+}
+
+.c3-table .company-rating .star-rating::after {
+    display: block;
+    content: '';
+    height: var(--size);
+    width: calc( var(--size) * var( --rating, 0 ) );
+    background: gold;
+}
+
+.c3-table .company-rating .text-rating {
+    font-weight: 700;
+    color: var(--clever-blue);
+    font-size: calc( var(--size) * 0.6 );
+    vertical-align: calc( var(--size) * 0.2 );
+}
+
+.c3-table .company-rating .text-rating::after {
+    display: inline;
+    content: '/5';
+    font-weight: 400;
+    color: #0006;
+}
+
+.c3-table .num_reviews {
+
+}
+
+.c3-table .details dl {
+    display: grid;
+    grid-template-columns: max-content auto;
+}
+
+.c3-table .details dl dt {
+    grid-column: 1;
+    font-weight: 700;
+}
+.c3-table .details dl dt::after {
+    content: ':';
+}
+
+
+.c3-table .details dl dd {
+    grid-column: 2;
+}
+
+@property --focus-button-start {
+	syntax: "<color>";
+	initial-value: #438e79;
+	inherits: false;
+}
+
+@property --focus-button-end {
+	syntax: "<color>";
+	initial-value: #2da885;
+	inherits: false;
+}
+
+.c3-table .cta {
+    text-align: center;
+}
+
+.c3-table .cta-button {
+    --size: calc( 0.8 * var(--base-size));
+    --text-color: #fff;
+
+    display: inline-block;
+    background: linear-gradient(90deg, var(--focus-button-start) 0%, var(--focus-button-end) 100%) !important;
+    transition: --focus-button-start 0.5s, --focus-button-end 0.5s;
+    transition-delay: 0.3s, 0.3s;
+    color: var(--text-color);
+    border-radius: calc( var(--size) / 4 );
+    font-weight: 700;
+    font-size: calc( 0.8 * var(--size) );
+    padding: calc( var(--size) / 2 ) calc( var(--size) );
+    text-decoration: none;
+    box-shadow: 3px 4px 5px #0006;
+}
+
+.c3-table .cta-button::after {
+    content: '';
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon points='6,6 6,8 14.59,8 5,17.59 6.41,19 16,9.41 16,18 18,18 18,6'/></svg>") no-repeat 50% 50%;
+    mask-size: cover;
+    display: inline-block;
+    width: calc( 0.8 * var(--size) );
+    height: calc( 0.8 * var(--size) );
+    margin-inline-start: calc( var(--size) / 2 );
+    background-color: var(--text-color);
+    vertical-align: calc( 0px - ( var(--size) / 8 ) );
+    transition: rotate 0.2s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.c3-table .cta-button:hover,
+.c3-table .cta-button:focus {
+    --focus-button-start: #2da885;
+    --focus-button-end: #0ec18f;
+    transition-delay: 0s, 0s;
+}
+
+.c3-table .cta-button:hover::after,
+.c3-table .cta-button:focus::after {
+    rotate: 45deg;
+    transition-delay: 0s;
+}
+
+/**
+ * Style Variations:
+ */
+
+.is-style-clean .c3-table {
+    --border-radius: 0;
+    --border-widths: 0;
+
+    box-shadow: none;
+}
+
+.is-style-clean .c3-table thead {
+    --background: transparent;
+    --text-color: #000;
+    --border-color: var(--clever-blue);
+
+    font-size: var(--base-size);
+    line-height: 0.7;
+}
+
+.is-style-clean .c3-table thead th {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.is-style-clean .c3-table tbody {
+    --background: none;
+}
+
+.is-style-clean .c3-table tbody th,
+.is-style-clean .c3-table tbody td {
+    border-bottom: 1px solid #0002;
+}
+
+.is-style-clean .c3-table tbody tr:hover {
+    --background: #0000000c;
+}
+
+/**
+ * Mobile UI tweaks
+ */
+@media screen and ( max-width: 900px ) {
+    .c3-table {
+        display: block;
+    }
+
+    .c3-table thead,
+    .c3-table thead tr, 
+    .c3-table thead th:first-child {
+        display: block;
+        text-align: center;
+    }
+
+    .c3-table thead th:not(:first-child) {
+        display: none;
+    }
+
+    .c3-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .c3-table tbody {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .c3-table tbody tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .c3-table tbody th:not(:last-child),
+    .c3-table tbody td:not(:last-child) {
+        border: none !important;
+    }
+
+    .c3-table tbody th:last-child,
+    .c3-table tbody td:last-child {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        padding-bottom: var(--base-size);
+    }
+
+    .c3-table tbody th.company {
+        grid-column: 1;
+    }
+
+    .c3-table tbody td.details {
+        grid-column: 2;
+    }
+
+    .c3-table tbody td.cta {
+        grid-column: 1 / span 2;
+    }
+}
+
+/**
+ * May as well add some Print styles if users want to print off the table as a reference!
+ */
+
+@media print {
+
+}
+
+
+/**
+ * Some nominal styling for the Contact CTA dialog.
+ */
+
+#contactDialog {
+	width: clamp( 240px, 90%, 800px );
+    padding: 2em;
+    border-radius: 1em;
+}
+
+#contactDialog::backdrop {
+	background: #000a;
+    backdrop-filter: blur(5px);
+}
