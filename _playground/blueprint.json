@@ -1,0 +1,54 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "latest",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"steps": [
+		{
+			"step": "resetData"
+		},
+        {
+            "step": "installPlugin",
+            "pluginData": {
+                "resource": "wordpress.org/plugins",
+                "slug": "secure-custom-fields"
+            },
+            "options": {
+                "activate": true
+            }
+        },
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://github-proxy.com/proxy/?repo=georgestephanis/c3-table"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "importWxr",
+			"file": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/georgestephanis/c3-table/refs/heads/main/_playground/companies.xml"
+			}
+		},
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"WP_DEBUG": true,
+				"WP_DEBUG_DISPLAY": true
+			}
+		},
+		{
+			"step": "login",
+			"username": "admin"
+		}
+	]
+}
