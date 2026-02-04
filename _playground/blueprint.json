@@ -1,6 +1,6 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
-	"landingPage": "/",
+	"landingPage": "/c3-table/",
 	"preferredVersions": {
 		"php": "latest",
 		"wp": "latest"
@@ -36,7 +36,7 @@
 			"step": "importWxr",
 			"file": {
 				"resource": "url",
-				"url": "https://raw.githubusercontent.com/georgestephanis/c3-table/refs/heads/main/_playground/companies.xml"
+				"url": "https://raw.githubusercontent.com/georgestephanis/c3-table/refs/heads/main/_playground/c3-table.xml"
 			}
 		},
 		{
