@@ -17,6 +17,7 @@ This code was written in a specified web IDE without any tooling. There may be m
 # Project Specifications:
 
 [Trial Assessment: Senior WordPress Developer | Clever Real Estate](https://docs.google.com/document/d/1aE-4DpcYoCH5rwHDfeKSKq7G7Du0Sl7oL-s5VuxZyB4/edit?usp=sharing)
+
 [Trial Assignment: Data Sample](https://docs.google.com/spreadsheets/d/1OgnsmipNwjJ72hX1RQv7N_JnixnL6KqBjhmX8VATuG0/edit?usp=sharing)
 
 # Architecture:
