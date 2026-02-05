@@ -1,10 +1,10 @@
 # c3-table
 
-Work done for a code trial performed for Clever Real Estate.
+Work done for a code trial performed for a Real Estate listing company.
 
 # Code License:
 
-This code was written by George Stephanis for evaluation by Clever Real Estate. It's not meant to be used for any purpose besides this, and this work has not been paid.
+This code was written by George Stephanis for evaluation by a prospective employer/client. It's not meant to be used for any purpose besides this, and the work performed has not been paid.
 
 # Disclaimer:
 
